@@ -1,98 +1,105 @@
-
-*{
-  margin: 0 ;
+* {
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
 }
- .container 
- {
+
+.container {
   width: 100%;
   min-height: 100vh;
-  background-image: linear-gradient(rgb(9, 0, 77, 0.65), rgba(9,0,77,0.65));
-  background-image:url(/public/images/background.jpg) ;
+  background-image: linear-gradient(rgba(9, 0, 77, 0.65), rgba(9, 0, 77, 0.65)),
+    url(/public/images/background.jpg);
   background-size: cover;
   background-position: center;
   padding: 10px 8%;
+}
 
- }
+/* Nav */
 
-
- nav
- {
+nav {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 0;
+  flex-wrap: wrap; /* Allow wrapping */
+}
 
- }
- .logo 
- {
+.logo {
   width: 80px;
   cursor: pointer;
-  
+}
 
- }
- nav ul 
- {
+/* Nav links container */
+nav ul {
   list-style: none;
-  width: 100%;
+  /* Remove large padding for responsiveness */
+  padding: 0;
+  margin: 0;
   text-align: right;
-  padding: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  flex: 1; /* Take remaining space */
+  justify-content: flex-end;
+}
 
- }
- nav ul li 
- {
+nav ul li {
   display: inline-block;
-  margin: 10px 20px;
+  margin: 0 10px;
+}
 
- }
-
- nav ul li a 
- {
+nav ul li a {
   color: white;
   text-decoration: none;
   font-size: 20px;
   font-weight: 400;
+  white-space: nowrap;
+}
 
- }
- .btn
- {
+/* Button in nav */
+.btn {
   display: flex;
   align-items: center;
-padding: 10px 20px;
-border: 0;
-outline: 0;
+  padding: 10px 20px;
+  border: 0;
+  outline: 0;
   border-radius: 5px;
-  background-color:  #001f3f;
-  color:white ;
+  background-color: #001f3f;
+  color: white;
   font-weight: 500;
   cursor: pointer;
+  white-space: nowrap;
+  margin-left: 10px;
+}
 
- }
-
- .btn img {
+.btn img {
   width: 20px;
   margin-right: 10px;
+}
 
- }
+/* Header content */
 
-
- /* header */
-
- .content {
+.content {
   margin-top: 14%;
   color: #fff;
   max-width: 620px;
-
 }
+
 .content h1 {
-  font-size: 70px ;
+  font-size: 70px;
   font-weight: 800;
   line-height: 85px;
   margin-bottom: 25px;
 }
+
+.content p {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+/* Form */
 
 .content form {
   display: flex;
@@ -101,17 +108,103 @@ outline: 0;
   border-radius: 5px;
   padding: 10px;
   margin-top: 30px;
-
+  max-width: 100%;
 }
+
 .content form input {
   border: 0;
   outline: 0;
   width: 100%;
   font-size: 16px;
   padding-left: 10px;
-
 }
+
 .content form button {
   font-size: 15px;
   padding: 10px 30px;
+  white-space: nowrap;
+  border-radius: 5px;
+  border: none;
+  background-color: #001f3f;
+  color: white;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* Responsive Media Queries */
+
+/* Tablets and smaller */
+@media (max-width: 768px) {
+  nav {
+    justify-content: center;
+  }
+
+  nav ul {
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0;
+    flex-basis: 100%;
+  }
+
+  nav ul li {
+    margin: 0 8px;
+  }
+
+  .btn {
+    margin-left: 0;
+    margin-top: 10px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .content {
+    margin-top: 10%;
+    max-width: 90%;
+  }
+
+  .content h1 {
+    font-size: 45px;
+    line-height: 55px;
+  }
+
+  .content p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .content form {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 8px;
+  }
+
+  .content form input {
+    padding: 12px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .content form button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    margin-left: 0;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  nav ul li a {
+    font-size: 16px;
+  }
+
+  .content h1 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .content p {
+    font-size: 14px;
+    line-height: 22px;
+  }
 }

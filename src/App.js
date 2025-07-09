@@ -30,9 +30,9 @@ function App() {
 
     <div className='content'>
       <h1>
-       Beautiful 
+       Dangerous
         <br/>
-    Places to explore
+    Weapons to explore
 
       </h1>
        <p>
